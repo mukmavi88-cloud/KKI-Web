@@ -121,7 +121,9 @@ p{font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:var(--mut);margin:0 0 
 body.cn nav,body.cn .hud,body.cn #wv,body.cn #bar,body.cn #cur,body.cn .fx{opacity:0!important;pointer-events:none;transition:opacity .8s}
 body.cn #wrap{visibility:hidden;transition:visibility 0s 1.3s}
 #cbg{position:fixed;inset:0;z-index:40;background:radial-gradient(ellipse at 50% 55%,#1c0407 0%,#050202 55%,#000 100%);opacity:0;pointer-events:none;transition:opacity 1.3s}
-#cfg{position:fixed;inset:0;z-index:42;opacity:0;pointer-events:none;overflow:hidden;transition:opacity 1s;--bars:0vh}
+#cfg{position:fixed;inset:0;z-index:42;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden;transition:opacity 1s,visibility 0s 1s;--bars:0vh}
+body.cn #cfg{visibility:visible;transition:opacity 1s}
+.err{color:#ff6a58;font-size:13px;margin-top:14px;line-height:1.4}
 #cfg button{pointer-events:auto}
 .cbar{position:absolute;left:0;right:0;background:#000;height:var(--bars);z-index:5}.ct{top:0}.cb{bottom:0}
 .cline{position:absolute;left:50%;top:50%;height:3px;width:0;opacity:0;transform:translate(-50%,-50%);background:linear-gradient(90deg,#0000,#ff2e2e 20%,#fff 50%,#ff2e2e 80%,#0000);box-shadow:0 0 40px 8px #ff2e2e99;z-index:3}
@@ -194,14 +196,14 @@ body.cn #wrap{visibility:hidden;transition:visibility 0s 1.3s}
   <div class="tag fd">The founder</div>
   <h2><span class="w"><i>Rage</i></span> <span class="w"><i>Boy.</i></span></h2>
   <p class="fd">Founder and owner of KuroKishi India. The offline studio started on 18 October 2026 to give Hindi dubbing the cinematic care it deserves.</p>
-  <p class="fd">Have a project to dub, or just a fan of the work? Write to <a href="mailto:mukmavi88@gmail.com" style="color:var(--fg)">mukmavi88@gmail.com</a>.</p>
+  <p class="fd">Have a project to dub, or just a fan of the work? Write to <a href="mailto:kurokishiinc@gmail.com" style="color:var(--fg)">kurokishiinc@gmail.com</a>.</p>
  </div>
 </section>
 
 <section class="c" id="s7" data-n="Connect">
  <div class="tag fd">Connect with us</div>
  <h2><span class="w"><i>Join the</i></span> <span class="w"><i>community.</i></span></h2>
- <div class="igw fd"><a class="ig" id="igc" href="https://www.instagram.com/rage_boy_dubz/" target="_blank" rel="noopener" aria-label="Open @RAGE_BOY_DUBZ on Instagram">
+ <div class="igw fd"><a class="ig" id="igc" href="https://www.instagram.com/rage_boy_dubz?knvt=MW55Nmo0emx3aXQ3bw==" target="_blank" rel="noopener" aria-label="Open @RAGE_BOY_DUBZ on Instagram">
   <span class="igi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
   <span class="igh">@RAGE_BOY_DUBZ</span>
   <span class="igs">Rage Boy · Founder, KuroKishi India</span>
@@ -229,10 +231,11 @@ body.cn #wrap{visibility:hidden;transition:visibility 0s 1.3s}
   <label for="a4">Mother tongue (language you voice in)</label><input id="a4" required placeholder="e.g. Hindi">
   <label for="a5">Experience</label><select id="a5" required><option value="">Select</option><option>Fresher</option><option>Under 1 year</option><option>1 to 3 years</option><option>3 to 5 years</option><option>5+ years</option></select>
   <label for="a6">WhatsApp number (valid)</label><input id="a6" type="tel" required placeholder="+91 98765 43210" autocomplete="tel">
+  <div class="err" id="err" role="alert"></div>
   <button class="btn" type="submit" id="sb">Send audition</button>
-  <div class="res" id="res"><div id="rok" style="display:none"><b style="color:var(--fg)">Application sent.</b> Thank you! We’ll contact you on WhatsApp soon.</div><div id="rfb" style="display:none"><b style="color:var(--fg)">One last step.</b> We couldn’t send it automatically, so your email app should have opened with your details. Press send there. If nothing opened, copy this and email it to <b>mukmavi88@gmail.com</b>:<textarea id="rt" readonly></textarea><button class="btn o" type="button" id="cp" style="margin:0">Copy details</button></div></div>
+  <div class="res" id="res"><div id="rok" style="display:none"><b style="color:var(--fg)">Application sent.</b> Thank you! We’ll contact you on WhatsApp soon.</div><div id="rfb" style="display:none"><b style="color:var(--fg)">One last step.</b> We couldn’t send it automatically, so your email app should have opened with your details. Press send there. If nothing opened, copy this and email it to <b>kurokishiinc@gmail.com</b>:<textarea id="rt" readonly></textarea><button class="btn o" type="button" id="cp" style="margin:0">Copy details</button></div></div>
  </form>
- <div class="ft"><div>© 2026 KuroKishi India · Anime Dubbing Studio</div><div style="margin-top:8px">Projects and collaborations: <a href="mailto:mukmavi88@gmail.com">mukmavi88@gmail.com</a></div></div>
+ <div class="ft"><div>© 2026 KuroKishi India · Anime Dubbing Studio</div><div style="margin-top:8px">Projects and collaborations: <a href="mailto:kurokishiinc@gmail.com">kurokishiinc@gmail.com</a></div></div>
 </section>
 
 <section class="c" id="s8" data-n="Finale">
@@ -270,7 +273,7 @@ var sl=$$('#s2 .sl'),dots=$$('#s2 .dots b'),sc=$('#scrub');
 sc.innerHTML=sc.textContent.split(' ').map(function(w){return '<span>'+w+'</span>'}).join(' ');var words=$$('#scrub span');
 // partner rows
 [['#r1',0],['#r2',2]].forEach(function(r){var h='';for(var k=0;k<3;k++)for(var i=0;i<4;i++){var p=PART[(i+r[1])%4];h+='<div class="pl">'+(LOGO_IMG[p[0]]?'<img alt="'+p[0]+'" src="'+LOGO_IMG[p[0]]+'">':p[1])+'</div>'}$(r[0]).innerHTML=h});
-var IGU='https://www.instagram.com/rage_boy_dubz/',IG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+var IGU='https://www.instagram.com/rage_boy_dubz?knvt=MW55Nmo0emx3aXQ3bw==',IG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
 var SOC=['<span class="wm">'+IG+'@RAGE_BOY_DUBZ</span>','<span class="wm"><u>Follow</u> on Instagram</span>','<span class="wm">RAGE <u>BOY</u></span>','<span class="wm"><u>DUBZ</u> ▶ Hindi</span>'];
 [['#r3',0],['#r4',2]].forEach(function(r){var h='';for(var k=0;k<3;k++)for(var i=0;i<4;i++)h+='<a class="pl" href="'+IGU+'" target="_blank" rel="noopener" aria-label="Instagram @RAGE_BOY_DUBZ">'+SOC[(i+r[1])%4]+'</a>';$(r[0]).innerHTML=h});
 var rows=[$('#r1'),$('#r2'),$('#r3'),$('#r4')],rowW=[0,0,0,0],rowSecs=[];
@@ -308,6 +311,7 @@ var eq=$('#eq');for(var q=0;q<32;q++)eq.insertAdjacentHTML('beforeend','<i style
 var igc=$('#igc');igc.addEventListener('pointermove',function(e){var b=igc.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;igc.style.transform='rotateY('+((x-.5)*10)+'deg) rotateX('+((.5-y)*8)+'deg)';igc.style.setProperty('--mx',x*100+'%');igc.style.setProperty('--my',y*100+'%')});
 igc.addEventListener('pointerleave',function(){igc.style.transform=''});igc.addEventListener('click',function(){click()});
 html.style.overflow='hidden';
+var vhEl=document.createElement('div');vhEl.style.cssText='position:fixed;left:0;top:0;width:0;height:100vh;visibility:hidden;pointer-events:none';document.body.appendChild(vhEl);
 // ---- cinematic audio ----
 var AC,mg,rv,snd=true,chT,entered=false;
 function setLbl(){$('#snd').textContent='Sound: '+(snd?'On':'Off')}
@@ -342,6 +346,10 @@ function finaleSound(){if(!snd||!AC||AC.state!=='running')return;var t=AC.curren
  [[293.7,0],[440,.15],[587.3,.3],[698.5,.45],[880,.6]].forEach(function(n){tone(n[0],t+5+n[1],1.2,6,.06)});tone(73.4,t+4.8,.2,7,.15);
  tone(55,t+6,.01,2.4,.3);tone(1760,t+6,.01,3,.025);tone(1174.7,t+9.2,.05,4,.05);setTimeout(click,3500)}
 function enter(){snd=true;startAudio();setLbl();$('#ld').classList.add('gone');html.style.overflow='';t0=performance.now();$('#s0').classList.add('on');setTimeout(function(){whoosh();click();revealSound($('#s0 h1'))},300)}
+function pauseAudio(){if(AC&&AC.state==='running')AC.suspend()}
+function resumeAudio(){if(AC&&snd&&AC.state==='suspended')AC.resume()}
+document.addEventListener('visibilitychange',function(){if(document.hidden)pauseAudio();else resumeAudio()});
+addEventListener('pagehide',pauseAudio);addEventListener('pageshow',function(){if(!document.hidden)resumeAudio()});
 function go(){if(entered)return;entered=true;enter()}
 setTimeout(go,2600);$('#ld').addEventListener('pointerdown',go);
 function unlock(){if(!AC&&snd)startAudio();if(AC&&AC.state==='suspended')AC.resume()}
@@ -350,7 +358,7 @@ setInterval(function(){var run=AC&&AC.state==='running';$('#snh').classList.togg
 $('#snd').onclick=function(){if(!AC){snd=true;startAudio()}else{snd=!snd;mg.gain.setTargetAtTime(snd?.9:0,AC.currentTime,.25)}setLbl();click()};
 // ---- layout ----
 var ST=[[0,0,[0,-.04,.92,.08,-.5,0,0,.95]],[1,.45,[.27,0,.85,.12,1.3,0,.18,.4]],[2,.05,[-.27,0,.88,.1,2.9,0,-.15,.28]],[2,.3,[.27,0,.9,.2,4.3,1,.2,.35]],[2,.55,[-.27,.02,.92,.05,5.8,0,-.1,.3]],[2,.8,[.27,0,.9,.15,7.4,1,.15,.4]],[2,.95,[0,0,.95,.05,8.8,1,0,.5]],[3,.5,[0,.3,.5,.12,10.2,0,0,.12]],[4,.5,[.27,0,.85,.1,11.6,0,-.15,.5]],[5,.5,[0,.3,.5,.12,13,0,0,.12]],[6,.45,[0,.22,.5,0,14.4,0,0,.15]],[7,.2,[-.28,-.02,.7,.1,15.8,.5,.1,.3]],[8,.3,[-.3,0,.95,.05,19.4,0,0,.55]]];
-function measure(){vh=innerHeight;vw=innerWidth;emb.width=vw;emb.height=vh;pins.forEach(function(p){p.style.height=(p.dataset.vh*vh/100)+'px'});
+function measure(){vh=vhEl.offsetHeight||innerHeight;vw=innerWidth;emb.width=innerWidth;emb.height=innerHeight;pins.forEach(function(p){p.style.height=(p.dataset.vh*vh/100)+'px'});
  H=wrap.scrollHeight;document.body.style.height=H+'px';secs.forEach(function(s){s.t=s.offsetTop;s.h=s.offsetHeight});
  A=ST.map(function(k){var s=secs[k[0]];return{at:s.t+s.h*k[1],s:k[2]}});trkW=trk.scrollWidth;rows.forEach(function(r,i){rowW[i]=r.scrollWidth/3;rowSecs[i]=r.closest('section')})}
 measure();addEventListener('resize',measure);addEventListener('load',measure);setTimeout(measure,600);
@@ -358,19 +366,22 @@ $$('[data-g]').forEach(function(a){a.onclick=function(){click();whoosh();var s=s
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!e.target.classList.contains('on')){e.target.classList.add('on');revealSound(e.target.querySelector('h2'))}})},{threshold:.3});
 $$('#s3,#s4,#s6,#s7').forEach(function(s){io.observe(s)});
 // ---- form ----
-var FORM_ENDPOINT='https://formsubmit.co/ajax/mukmavi88@gmail.com';
-$('#af').onsubmit=function(e){e.preventDefault();click();var ok=true;
- ['a1','a2','a3','a4','a5','a6'].forEach(function(i){var el=$('#'+i),bad=!el.value.trim();if(i==='a6')bad=!/^\+?[0-9 \-]{10,15}$/.test(el.value.trim());el.style.borderColor=bad?'#d4141c':'';if(bad)ok=false});
- if(!ok)return;
- var v=function(i){return $('#'+i).value.trim()},btn=$('#sb'),res=$('#res');
- var data={Name:v('a1'),Age:v('a2'),City:v('a3'),'Mother tongue':v('a4'),Experience:v('a5'),WhatsApp:v('a6'),_subject:'New audition application: '+v('a1'),_template:'table',_captcha:'false'};
- var body='New audition for KuroKishi India\n\nName: '+v('a1')+'\nAge: '+v('a2')+'\nCity: '+v('a3')+'\nMother tongue: '+v('a4')+'\nExperience: '+$('#a5').value+'\nWhatsApp: '+v('a6');
- btn.disabled=true;btn.textContent='Sending…';
- function done(sent){btn.disabled=false;btn.textContent='Send audition';res.style.display='block';$('#rok').style.display=sent?'block':'none';$('#rfb').style.display=sent?'none':'block';
-  if(sent){$('#af').reset();return}
-  $('#rt').value=body;var a=document.createElement('a');a.href='mailto:mukmavi88@gmail.com?subject='+encodeURIComponent('Audition: '+v('a1'))+'&body='+encodeURIComponent(body);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
- var ctl=window.AbortController?new AbortController():null,to=setTimeout(function(){if(ctl)ctl.abort()},9000);
- fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ctl?ctl.signal:undefined}).then(function(r){return r.json()}).then(function(j){clearTimeout(to);done(!!(j&&(j.success===true||j.success==='true')))}).catch(function(){clearTimeout(to);done(false)})};
+var FORM_ENDPOINT='https://formsubmit.co/ajax/kurokishiinc@gmail.com';
+function showAt(el){var r=el.getBoundingClientRect();scrollTo({top:Math.max(0,cur+r.top-vh*.35)})}
+$('#af').onsubmit=function(e){e.preventDefault();click();
+ var err=$('#err'),res=$('#res'),btn=$('#sb'),bad=[];
+ [['a1','Full name'],['a2','Age'],['a3','City'],['a4','Mother tongue'],['a5','Experience'],['a6','WhatsApp number']].forEach(function(f){var el=$('#'+f[0]),v=el.value.trim(),b=!v;if(f[0]==='a2'){var n=+v;b=!(n>=10&&n<=90)}if(f[0]==='a6')b=!/^\+?\d{10,15}$/.test(v.replace(/[\s\-()]/g,''));el.style.borderColor=b?'#d4141c':'';if(b)bad.push(f)});
+ if(bad.length){err.textContent='Please check: '+bad.map(function(f){return f[1]}).join(', ')+'.';$('#'+bad[0][0]).focus();showAt(err);return}
+ err.textContent='';
+ var v=function(i){return $('#'+i).value.trim()},data={name:v('a1'),age:v('a2'),city:v('a3'),mother_tongue:v('a4'),experience:v('a5'),whatsapp:v('a6'),_subject:'New audition application: '+v('a1'),_template:'table',_captcha:'false'};
+ var body='New audition for KuroKishi India\n\nName: '+v('a1')+'\nAge: '+v('a2')+'\nCity: '+v('a3')+'\nMother tongue: '+v('a4')+'\nExperience: '+v('a5')+'\nWhatsApp: '+v('a6');
+ btn.disabled=true;btn.textContent='Sending…';res.style.display='none';
+ var fin=false,ctl=window.AbortController?new AbortController():null,to;
+ function done(sent){if(fin)return;fin=true;clearTimeout(to);btn.disabled=false;btn.textContent='Send audition';res.style.display='block';$('#rok').style.display=sent?'block':'none';$('#rfb').style.display=sent?'none':'block';
+  if(sent){$('#af').reset();click()}else{$('#rt').value=body;var a=document.createElement('a');a.href='mailto:kurokishiinc@gmail.com?subject='+encodeURIComponent('Audition: '+data.name)+'&body='+encodeURIComponent(body);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+  setTimeout(function(){showAt(res)},60)}
+ to=setTimeout(function(){if(ctl)ctl.abort();done(false)},12000);
+ fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:ctl?ctl.signal:undefined}).then(function(r){return r.json()}).then(function(j){done(!!(j&&(j.success===true||j.success==='true')))}).catch(function(){done(false)})};
 $('#cp').onclick=function(){var t=$('#rt');t.select();try{navigator.clipboard.writeText(t.value)}catch(e){document.execCommand('copy')}this.textContent='Copied'};
 // ---- WebGL: realistic PBR studio condenser mic ----
 var ok=!!window.THREE,R,scn,cam,group,mic,ringsM=[],dust,moon,glow,mouse={x:0,y:0},sm={x:0,y:0};
@@ -516,7 +527,7 @@ function frame(now){
  var pc=('00'+Math.round(cur/Math.max(1,H-vh)*100)).slice(-3)+'%';if(pc+nm!==lastHud){if(nm!==hs.textContent)whoosh();lastHud=pc+nm;hp.textContent=pc;hs.textContent=nm}
  var ms=now*.001;wave(ms,.25+cl(Math.abs(vel),0,1.5)*1.6+(snd?.1:0));mystic(dt,now);
  if(ok){
-  var visH=2*8*Math.tan(16*Math.PI/180),visW=visH*vw/vh,narrow=vw<700;
+  var visH=2*8*Math.tan(16*Math.PI/180),visW=visH*innerWidth/innerHeight,narrow=vw<700;
   var j=0;while(j<A.length-1&&A[j+1].at<=mid)j++;
   var a=A[j].s,b=A[Math.min(j+1,A.length-1)].s,span=A[Math.min(j+1,A.length-1)].at-A[j].at;
   var t=span>0&&mid>A[0].at?ez(cl((mid-A[j].at)/span)):0,Q=[];for(var k=0;k<8;k++)Q[k]=L(a[k],b[k],t);

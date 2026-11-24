@@ -12,8 +12,8 @@ A single-file static site (`index.html`). No build step.
 3. Vercel gives you a live link. Later edits to `index.html` on GitHub redeploy automatically.
 
 ## Audition form → your email
-Applications are sent to mukmavi88@gmail.com through FormSubmit.
-The first time anyone submits the form on the live site, FormSubmit emails you an activation link. Click it once, and every application after that arrives in your inbox.
+Applications are sent to kurokishiinc@gmail.com through FormSubmit.
+The first time anyone submits the form on the live site, FormSubmit emails you an activation link. Click it once (check Spam or Promotions if you can’t find it), and every application after that arrives in your inbox. The email address changed, so this activation is needed again.
 Test the form on the live Vercel link, not inside Claude.
 
 ## Still to add
