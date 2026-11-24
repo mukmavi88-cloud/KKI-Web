@@ -19,3 +19,7 @@ Test the form on the live Vercel link, not inside Claude.
 ## Still to add
 - Official logo files for MX Player, JioHotstar, Sony LIV and ZEE5 (the `LOGO_IMG` list near the top of the script).
 - Social links beyond Instagram.
+
+## Visitor shortcuts
+- **Free scroll** is always on: text and numbers show instantly, the page is shorter, and there is no glide or auto-playing ending. A "Play the final scene" button at the bottom plays the cinematic ending on request.
+- The floating **Audition** button jumps to the form. Its small arrow tucks it to the side of the screen, where a **JOIN** tab brings it back.
